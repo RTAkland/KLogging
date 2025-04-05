@@ -40,7 +40,7 @@ fun main() {
 }
 ```
 
-> The latest version can be found at https://maven.rtast.cn/#/releases/cn/rtast/klogging/klogging
+> The latest version can be found at https://repo.maven.rtast.cn/#/releases/cn/rtast/klogging/klogging
 
 
 # 中文文档
