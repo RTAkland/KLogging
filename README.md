@@ -1,6 +1,6 @@
 # KLogging
 
-A lightweight kotlin multiplatform logging, support 
+A lightweight kotlin multiplatform logging framework support several platforms 
 
 - linuxX64
 - linuxArmX64
