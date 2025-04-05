@@ -6,18 +6,18 @@
 
 package cn.rtast.klogging
 
-public class KLogging internal constructor(private val name: String) {
+public class KLogging internal constructor(private val name: String, private val prefix: String) {
     public companion object {
-        public fun getLogger(name: String): KLogging {
-            return KLogging(name)
+        public fun getLogger(name: String, prefix: String = ""): KLogging {
+            return KLogging(name, prefix)
         }
 
-        public fun getLogger(): KLogging {
-            return this.getLogger(this::class.qualifiedName.toString())
+        public fun getLogger(prefix: String = ""): KLogging {
+            return this.getLogger(this::class.qualifiedName.toString(), prefix)
         }
 
-        public inline fun <reified T> getLogger(type: T): KLogging {
-            return this.getLogger(type::class.qualifiedName.toString())
+        public inline fun <reified T> getLogger(type: T, prefix: String = ""): KLogging {
+            return this.getLogger(type::class.qualifiedName.toString(), prefix)
         }
     }
 
@@ -30,7 +30,7 @@ public class KLogging internal constructor(private val name: String) {
     private fun format(level: LogLevel, message: String) {
         val currentDatetime = getCurrentDatetime()
         val currentThreadName = getCurrentThreadName()
-        println("${level.loggingColor}[$currentDatetime][${level.name}][$currentThreadName][$name]: $message")
+        println("${level.loggingColor}$prefix[$currentDatetime][${level.name}][$currentThreadName][$name]: $message")
     }
 
     public fun debug(message: String) {
@@ -51,5 +51,15 @@ public class KLogging internal constructor(private val name: String) {
     public fun error(message: String) {
         if (LogLevel.ERROR.levelNumber < logLevel.levelNumber) return
         this.format(LogLevel.ERROR, message)
+    }
+
+    public fun error(message: String, exception: Exception) {
+        if (LogLevel.ERROR.levelNumber < logLevel.levelNumber) return
+        this.format(LogLevel.ERROR, "$message\n${exception.stackTraceToString()}")
+    }
+
+    public fun error(exception: Exception) {
+        if (LogLevel.ERROR.levelNumber < logLevel.levelNumber) return
+        this.format(LogLevel.ERROR, exception.stackTraceToString())
     }
 }

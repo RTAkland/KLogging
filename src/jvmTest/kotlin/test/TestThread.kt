@@ -19,14 +19,10 @@ class TestThread {
 
     @Test
     fun `Test Logging`() {
-        val logger1 = KLogging.getLogger("Test1").apply {
-            setLoggingLevel(LogLevel.ERROR)
-        }
-        val logger2 = KLogging.getLogger("Test2").apply {
+        val logger2 = KLogging.getLogger("Test2", "[S]").apply {
             setLoggingLevel(LogLevel.DEBUG)
         }
-        logger1.info("info")
-        logger1.error("error")
         logger2.debug("debug")
+        logger2.error("ssss", Exception("error"))
     }
 }
