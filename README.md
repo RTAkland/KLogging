@@ -1,6 +1,6 @@
 # KLogging
 
-A lightweight kotlin multiplatform logging, support 
+A lightweight kotlin multiplatform logging framework support several platforms 
 
 - linuxX64
 - linuxArmX64
@@ -40,7 +40,7 @@ fun main() {
 }
 ```
 
-> The latest version can be found at https://maven.rtast.cn/#/releases/cn/rtast/klogging/klogging
+> The latest version can be found at https://repo.maven.rtast.cn/#/releases/cn/rtast/klogging/klogging
 
 
 # 中文文档
