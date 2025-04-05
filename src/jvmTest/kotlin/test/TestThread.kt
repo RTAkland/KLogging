@@ -23,6 +23,7 @@ class TestThread {
             setLoggingLevel(LogLevel.DEBUG)
         }
         logger2.debug("debug")
-        logger2.error("ssss", Exception("error"))
+        println("test")
+
     }
 }

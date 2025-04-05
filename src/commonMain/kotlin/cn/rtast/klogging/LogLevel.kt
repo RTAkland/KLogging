@@ -13,5 +13,6 @@ public enum class LogLevel(
     DEBUG(0, "\u001B[36m"),
     INFO(1, "\u001B[32m"),
     WARN(2, "\u001B[33m"),
-    ERROR(3, "\u001B[31m")
+    ERROR(3, "\u001B[31m"),
+    RESET(-1, "\u001B[0m")
 }
