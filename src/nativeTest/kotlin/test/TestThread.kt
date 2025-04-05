@@ -28,5 +28,7 @@ class TestThread {
         logger1.info("info")
         logger1.error("error")
         logger2.debug("debug")
+        logger2.error("1", Exception("111"))
+        logger2.error(Exception("111"))
     }
 }
