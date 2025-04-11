@@ -11,14 +11,6 @@ public class KLogging internal constructor(private val name: String, private val
         public fun getLogger(name: String, prefix: String = ""): KLogging {
             return KLogging(name, prefix)
         }
-
-        public fun getLogger(prefix: String = ""): KLogging {
-            return this.getLogger(this::class.qualifiedName.toString(), prefix)
-        }
-
-        public inline fun <reified T> getLogger(type: T, prefix: String = ""): KLogging {
-            return this.getLogger(type::class.qualifiedName.toString(), prefix)
-        }
     }
 
     private var logLevel = LogLevel.INFO
