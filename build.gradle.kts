@@ -1,8 +1,11 @@
+@file:OptIn(ExperimentalWasmDsl::class)
+
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
-    kotlin("multiplatform") version "2.1.20"
     id("maven-publish")
+    kotlin("multiplatform") version "2.1.20"
 }
 
 val libVersion: String by extra
@@ -27,6 +30,17 @@ kotlin {
     js(IR) {
         nodejs()
     }
+    wasmJs {
+        nodejs()
+    }
+    watchosArm32()
+    watchosArm64()
+    watchosDeviceArm64()
+    watchosSimulatorArm64()
+    watchosX64()
+    tvosArm64()
+    tvosSimulatorArm64()
+    tvosX64()
 
     compilerOptions {
         freeCompilerArgs.apply {
@@ -35,12 +49,6 @@ kotlin {
     }
 
     sourceSets {
-        commonMain.dependencies {
-        }
-
-        nativeMain.dependencies {
-        }
-
         commonTest.dependencies {
             implementation(kotlin("test"))
         }
