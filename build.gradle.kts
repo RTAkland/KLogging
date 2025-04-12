@@ -41,6 +41,9 @@ kotlin {
     tvosArm64()
     tvosSimulatorArm64()
     tvosX64()
+    iosArm64()
+    iosSimulatorArm64()
+    iosX64()
 
     compilerOptions {
         freeCompilerArgs.apply {
