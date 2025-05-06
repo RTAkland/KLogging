@@ -2,7 +2,7 @@
 
 A lightweight kotlin multiplatform logging framework support several platforms
 
-- jvm(1.8)
+- jvm(1.8 and above)
 - mingwX64
 - linuxX64
 - linuxArm64
@@ -53,7 +53,7 @@ fun main() {
 }
 ```
 
-> The latest version can be found at https://repo.maven.rtast.cn/#/releases/cn/rtast/klogging/klogging
+> The latest version can be found at https://repo.maven.rtast.cn/listing/releases/cn/rtast/klogging/klogging
 
 # 中文文档
 
