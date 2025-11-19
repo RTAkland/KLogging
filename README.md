@@ -8,8 +8,8 @@ A lightweight kotlin multiplatform logging framework support several platforms
 - linuxArm64
 - macosX64
 - macosArm64
-- js(IR)(nodejs)
-- wasmJs(nodejs)
+- js(IR)(nodejs, browser)
+- wasmJs(nodejs, browser)
 - watchosArm32
 - watchosArm64
 - watchosDeviceArm64
@@ -33,7 +33,7 @@ repositories {
 kotlin {
     sourceSets {
         commonMain.dependencies {
-            implementation("cn.rtast.klogging:klogging:<version>")
+            implementation("cn.rtast.klogging:klogging-core:0.1.4")
         }
     }
 }
@@ -54,9 +54,3 @@ fun main() {
 ```
 
 > The latest version can be found at https://repo.maven.rtast.cn/listing/releases/cn/rtast/klogging/klogging
-
-# 中文文档
-
-# KLogging
-
-轻量级的Kotlin multiplatform的日志框架, 无任何依赖即可使用, 按照上方的配置即可使用

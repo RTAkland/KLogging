@@ -15,8 +15,15 @@ kotlin {
     linuxArm64()
     macosX64()
     macosArm64()
-    js(IR) { nodejs() }
-    wasmJs {nodejs() }
+    js(IR) {
+        nodejs()
+        browser()
+        useEsModules()
+    }
+    wasmJs {
+        nodejs()
+        browser()
+    }
     watchosArm32()
     watchosArm64()
     watchosDeviceArm64()

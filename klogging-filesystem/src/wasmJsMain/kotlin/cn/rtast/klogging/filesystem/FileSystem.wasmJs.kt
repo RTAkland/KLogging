@@ -11,6 +11,6 @@ public actual fun File.appendLine(content: String) {
     TODO("Not yet implemented")
 }
 
-actual fun File.readText(): String {
+public actual fun File.readText(): String {
     TODO("Not yet implemented")
 }
