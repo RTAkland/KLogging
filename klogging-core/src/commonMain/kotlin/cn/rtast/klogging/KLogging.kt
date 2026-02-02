@@ -22,10 +22,10 @@ public class KLogging internal constructor(private val name: String, private val
     private fun format(level: LogLevel, message: String) {
         val currentDatetime = getCurrentDatetime()
         val currentThreadName = getCurrentThreadName()
-        println(
+        writeToConsole(
             "${level.loggingColor}$prefix" +
                     "[${level.name}][$currentDatetime][$currentThreadName]" +
-                    "[$name]: $message${LogLevel.RESET.loggingColor}"
+                    "[$name]: $message${LogLevel.RESET.loggingColor}", level
         )
     }
 
