@@ -7,12 +7,14 @@
 
 package cn.rtast.klogging
 
-internal actual fun writeToConsole(content: String, level: LogLevel) {
+internal actual fun Logger.writeToConsole(content: String, level: LogLevel) {
     when (level) {
         LogLevel.DEBUG -> console.log(content)
         LogLevel.INFO -> console.log(content)
         LogLevel.WARN -> console.warn(content)
         LogLevel.ERROR -> console.error(content)
-        LogLevel.RESET -> console.log(content)
+        LogLevel.RESET -> Unit
     }
 }
+
+public actual open class Logger

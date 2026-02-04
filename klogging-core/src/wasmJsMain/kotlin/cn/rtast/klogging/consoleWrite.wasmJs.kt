@@ -6,6 +6,11 @@
 
 package cn.rtast.klogging
 
-internal actual fun writeToConsole(content: String, level: LogLevel) {
-    println(content)
+internal actual fun Logger.writeToConsole(content: String, level: LogLevel) {
+    when (level) {
+        LogLevel.RESET -> Unit
+        else -> println(content)
+    }
 }
+
+public actual open class Logger

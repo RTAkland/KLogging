@@ -12,12 +12,14 @@ import kotlinx.cinterop.ExperimentalForeignApi
 import platform.posix.fprintf
 import platform.posix.stderr
 
-internal actual fun writeToConsole(content: String, level: LogLevel) {
+internal actual fun Logger.writeToConsole(content: String, level: LogLevel) {
     when (level) {
         LogLevel.DEBUG -> println(content)
         LogLevel.INFO -> println(content)
         LogLevel.WARN -> println(content)
         LogLevel.ERROR -> fprintf(stderr, "%s\n", content)
-        LogLevel.RESET -> println(content)
+        LogLevel.RESET -> Unit
     }
 }
+
+public actual open class Logger

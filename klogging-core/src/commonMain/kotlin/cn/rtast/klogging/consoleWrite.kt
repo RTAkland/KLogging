@@ -7,4 +7,6 @@
 
 package cn.rtast.klogging
 
-internal expect fun writeToConsole(content: String, level: LogLevel)
+internal expect fun Logger.writeToConsole(content: String, level: LogLevel)
+
+public expect open class Logger()

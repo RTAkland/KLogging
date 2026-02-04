@@ -23,6 +23,7 @@ class TestThread {
             setLoggingLevel(LogLevel.DEBUG)
         }
         logger2.debug("debug")
+        logger2.debug("中文测试")
         println("test")
 
     }

@@ -6,7 +6,7 @@
 
 package cn.rtast.klogging
 
-public class KLogging internal constructor(private val name: String, private val prefix: String) {
+public class KLogging internal constructor(private val name: String, private val prefix: String): Logger() {
     public companion object {
         public fun getLogger(name: String, prefix: String = ""): KLogging {
             return KLogging(name, prefix)
